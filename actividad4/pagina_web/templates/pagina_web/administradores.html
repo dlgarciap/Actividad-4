@@ -1,0 +1,29 @@
+{% extends 'pagina_web/base.html' %}
+
+{% block content %}
+<h2>Listado de Administradores</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Departamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for administrador in administradores %}
+        <tr>
+            <td>{{ administrador.nombre }}</td>
+            <td>{{ administrador.apellido }}</td>
+            <td>{{ administrador.email }}</td>
+            <td>{{ administrador.departamento }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay administradores registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
